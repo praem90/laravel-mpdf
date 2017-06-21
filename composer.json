@@ -1,7 +1,6 @@
 {
     "name": "praem90/laravel-mpdf",
     "description": "A mPDF Wrapper for Laravel",
-    "version": "dev-master",
     "license": "MIT",
     "keywords": ["laravel", "mpdf", "pdf"],
     "authors": [
@@ -24,7 +23,7 @@
     },
     "extra": {
         "branch-alias": {
-            "dev-master": "0.1.0-dev"
+            "dev-master": "0.1-dev"
         },
         "laravel": {
             "providers": [
