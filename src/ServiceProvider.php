@@ -20,7 +20,7 @@ class ServiceProvider extends IlluminateServiceProvider
      *
      * @return void
      */
-    public static function register()
+    public function register()
     {
         $this->app->bind('mpdf', function () {
             return new PDF();
