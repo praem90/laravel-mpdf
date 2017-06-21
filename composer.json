@@ -1,0 +1,38 @@
+{
+    "name": "praem90/laravel-mpdf",
+    "description": "A mPDF Wrapper for Laravel",
+    "license": "MIT",
+    "keywords": ["laravel", "mpdf", "pdf"],
+    "authors": [
+        {
+            "name": "Mohan Raj M",
+            "email": "praem1990@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.5.9",
+        "illuminate/support": "5.1.x|5.2.x|5.3.x|5.4.x",
+        "mpdf/mpdf": "^6.1"
+
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Praem90\\PDF\\": "src"
+        }
+    },
+    "extra": {
+        "branch-alias": {
+            "dev-master": "0.8-dev"
+        },
+        "laravel": {
+            "providers": [
+                "Praem90\\PDF\\ServiceProvider"
+            ],
+            "aliases": {
+                "PDF": "Praem90\\PDF\\Facade"
+            }
+        }
+    },
+    "minimum-stability": "dev"
+}
