@@ -2,7 +2,7 @@
 
 Require this package in your composer.json and update composer.
 ```
-https://github.com/praem90/laravel-mpdf
+composer require praem90/laravel-mpdf
 ```
 
 ## Installation
