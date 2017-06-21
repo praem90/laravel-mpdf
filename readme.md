@@ -20,7 +20,7 @@ You can optionally use the facade for shorter code. Add this to your facades:
 Use 'PDF' Facade to interact with mPdf object
 
 ```
-    $pdf = PDF::loadView('pdf.invoice', $data);
+    $pdf = PDF::loadView('pdf.invoice', $data); // or PDF::loadHtml($html);
     return $pdf->download($filename); // or
     return $pdf->stream($filename);
 ```
