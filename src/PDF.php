@@ -29,7 +29,9 @@ class PDF
 
     public function stream($name = 'invoice.pdf')
     {
-        return $this->mPdf->Output($name, 'S');
+        return response($this->mPdf->Output($name, 'S'), 200, [
+            'Content-Type' => 'application/pdf',
+        ]);
     }
 
     public function download($name = 'invoice.pdf')
