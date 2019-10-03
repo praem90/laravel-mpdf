@@ -22,7 +22,10 @@ Use 'PDF' Facade to interact with mPdf object
 ```
     $pdf = PDF::loadView('pdf.invoice', $data); // or PDF::loadHtml($html);
     return $pdf->download($filename); // or
-    return $pdf->stream($filename);
+    return $pdf->stream($filename); // or
+    
+    $path = storage_path('app/invoices/invoice.pdf');
+    $pdf->save($path);
 ```
 You can access all the available mPDF methods directly by the same facade.
 eg.,
