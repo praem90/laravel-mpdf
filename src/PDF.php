@@ -38,6 +38,12 @@ class PDF
     {
         return $this->mPdf->Output($name, 'D');
     }
+    
+    public function save($path)
+    {
+        $this->mPdf->Output($path, 'F');
+        return $path;
+    }
 
     public function loadHtml($html)
     {
