@@ -7,17 +7,25 @@ use mPDF;
 /**
  * mPDF handler for generating invoice
  */
-class PDF 
+class PDF
 {
     /**
     * mPDF Instance
     */
     protected $mPdf;
 
-    public function __construct()
+    public function __construct($orientacao = 'L')
     {
-        $this->mPdf = new mPDF('utf-8', 'A4', '0', '0', 0, 0, 0, 0, 0, 0);
+        $this->mPdf = new mPDF('utf-8', 'A4', '0', '0', 0, 0, 0, 0, 0, 0, $orientacao);
         $this->mPdf->SetDisplayMode('fullpage');
+        $this->mPdf->showWatermarkText = true;
+
+        if($orientacao == 'P') {
+            $this->mPdf->AddPage('P');
+        } else {
+//            $this->mPdf->AddPage('L');
+        }
+
         $this->mPdf->list_indent_first_level = 0;
     }
 
@@ -29,9 +37,7 @@ class PDF
 
     public function stream($name = 'invoice.pdf')
     {
-        return response($this->mPdf->Output($name, 'S'), 200, [
-            'Content-Type' => 'application/pdf',
-        ]);
+        return $this->mPdf->Output($name, 'S');
     }
 
     public function download($name = 'invoice.pdf')
